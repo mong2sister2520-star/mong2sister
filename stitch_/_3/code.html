@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KkuLight | 프리미엄 응원봉 커스텀 샵</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#69355a",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeedef",
+                    "tertiary-fixed": "#ffd7ee",
+                    "surface-tint": "#6b5582",
+                    "tertiary-container": "#9c628a",
+                    "tertiary": "#814970",
+                    "on-primary-fixed-variant": "#533e69",
+                    "on-primary-container": "#fffbff",
+                    "surface-dim": "#dadadc",
+                    "surface": "#faf9fb",
+                    "primary-fixed": "#efdbff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e3e2e4",
+                    "background": "#faf9fb",
+                    "primary-fixed-dim": "#d7bcf0",
+                    "inverse-surface": "#2f3032",
+                    "primary-container": "#826b9a",
+                    "surface-variant": "#e3e2e4",
+                    "on-primary-fixed": "#25113b",
+                    "surface-bright": "#faf9fb",
+                    "on-surface-variant": "#4a454d",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fad3fd",
+                    "inverse-primary": "#d7bcf0",
+                    "on-secondary-container": "#77587c",
+                    "on-tertiary-fixed": "#36082c",
+                    "primary": "#695380",
+                    "surface-container-high": "#e8e8ea",
+                    "outline": "#7b757e",
+                    "inverse-on-surface": "#f1f0f2",
+                    "on-background": "#1a1c1d",
+                    "surface-container-low": "#f4f3f5",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#f6b2de",
+                    "on-secondary-fixed": "#2a1131",
+                    "secondary-fixed-dim": "#dfbbe4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary": "#725477",
+                    "on-surface": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#fcd7ff",
+                    "outline-variant": "#ccc4ce",
+                    "on-secondary-fixed-variant": "#593d5f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "64px",
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "container-padding-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .ribbon-tag {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d7bcf0;
+            border-radius: 10px;
+        }
+        .ambient-glow {
+            box-shadow: 0 20px 40px -15px rgba(149, 125, 173, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-primary/10 flex justify-between items-center h-20 px-container-padding-desktop max-w-full mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-display text-headline-md text-primary tracking-tight" href="#">KkuLight</a>
+<div class="hidden md:flex gap-6">
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Cart</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border-none rounded-full px-6 py-2 w-64 focus:ring-1 focus:ring-primary text-sm transition-all" placeholder="검색어를 입력하세요..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-all scale-95 active:scale-90" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined text-primary hover:opacity-80 transition-all scale-95 active:scale-90" data-icon="person">person</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-section-gap px-container-padding-desktop max-w-[1440px] mx-auto min-h-screen">
+<!-- Header -->
+<header class="mb-12 text-center">
+<h1 class="font-display text-display text-primary mb-4">Dreamy Collection</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">당신의 응원봉을 더욱 특별하게 만들어줄 프리미엄 커스텀 파츠들을 만나보세요.</p>
+</header>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filter -->
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="glass-card p-8 rounded-xl sticky top-32 ambient-glow">
+<div class="mb-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">filter_list</span>
+                            필터
+                        </h3>
+</div>
+<!-- Category Filter -->
+<div class="mb-8">
+<p class="font-label-md text-label-md text-on-surface mb-3 uppercase tracking-widest">Part Categories</p>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-full border-primary-container text-primary focus:ring-primary w-5 h-5 transition-all" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">전체 보기</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-primary-container text-primary focus:ring-primary w-5 h-5 transition-all" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">크라운 (Crowns)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-primary-container text-primary focus:ring-primary w-5 h-5 transition-all" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">스티커 (Stickers)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-full border-primary-container text-primary focus:ring-primary w-5 h-5 transition-all" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary">리본 (Ribbons)</span>
+</label>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="mb-8">
+<p class="font-label-md text-label-md text-on-surface mb-3 uppercase tracking-widest">Ribbon Colors</p>
+<div class="flex flex-wrap gap-3">
+<button class="w-8 h-8 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform bg-[#957DAD] ring-2 ring-transparent hover:ring-primary/20" title="Lavender"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform bg-[#F5EEF6] ring-2 ring-transparent hover:ring-primary/20" title="Soft White"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform bg-[#FFD7EE] ring-2 ring-transparent hover:ring-primary/20" title="Peachy Pink"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform bg-[#D7BCF0] ring-2 ring-transparent hover:ring-primary/20" title="Lilac"></button>
+<button class="w-8 h-8 rounded-full border-2 border-white shadow-sm hover:scale-110 transition-transform bg-[#826B9A] ring-2 ring-transparent hover:ring-primary/20" title="Deep Violet"></button>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<p class="font-label-md text-label-md text-on-surface mb-3 uppercase tracking-widest">Price Range</p>
+<input class="w-full h-1.5 bg-primary-fixed rounded-lg appearance-none cursor-pointer accent-primary mb-2" type="range"/>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>₩0</span>
+<span>₩50,000+</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-tertiary text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider ribbon-tag pb-3">New</span>
+</div>
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-weight="fill">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A premium close-up of a K-pop lightstick decorated with a voluminous, ethereal lavender silk ribbon and tiny hanging crystals. The background is a soft, dreamlike blurred studio setting with pastel lilac lighting. The product looks handmade and high-end, reflecting a lovely and ethereal brand identity with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKTWNqRSQIGOYeJ7OxrY68uSICXtlvYOa1d0kBkK0E-KTUsrL9SssksqBFm4_EhKEM20AvwnuaugSmv730PjBTzf0qpXps5q_Fhv-bgONFHmgLVnSEmVPGYZ5ATmzeqQJWuFmqEcc_UQljj3NqlC9eypWEdH22jond4IbyV4v6NstEqBHEBaSZPWPPbXJ2qsOYF9sHml6rI3LgglszBAsZucoxiYxzReB9vGY6leZZtFLOWF17qb9Xh7hRqmS_-6QQP6_FE_cTHM59"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">실크 드림 라벤더 리본</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩18,000</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A delicate silver crystal crown accessory designed to fit on top of a lightstick globe. The crown is intricately detailed with small sparkling pearls and tiny star shapes. The lighting is soft and ethereal, highlighting the shimmer of the crystals against a pristine white and lavender gradient background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArGawgdY4oYG-z6rATnu6bhlrwpZlAQYHP_LEvUUTFaNm4i6m0igWl2U2Y473k6RTbGfnJjfy05EuxAFoiOHdRbBNyYVm6MrS5rUnUiO5shkAo9LPdruZqkkWSWSar-yhdR1XXyPZX9Bzx-2Lr81f6IjCMozlrfpr3kwFJyOV2mtgQwoRLPpoADhmZ8mk5QTEFGAhFY-ub6KtKh81VB72cZCg55lNsm5CacdwsrfCjS76yKRjTqH03QDv_cNvTdUfRaSJtUhnPYfAj"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">크리스탈 스타 크라운</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩24,500</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A set of holographic and iridescent stickers for lightstick customization featuring K-pop fan aesthetics like hearts, sparkles, and butterflies. The stickers are arranged neatly on a pastel lilac backing card. The photography uses soft-focus backgrounds and elegant ambient lighting to create a premium feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPl3QYmxIpdv5uv9uBc6mi2pjx4JMiTMOaFP8p2846A4iqmK6Eh4bXpJCPvk2fBu5a6t0mBh_abEkftL_IpbBh5EcmOms-sghuRuzaQgeNs9430YwyLXDH5_hlssJ_-fNMfDt70xAkNgXMxI3_rP0s6e6GkgmxLywWTaV6Y8zQrGYGlZSh_5OvAM8GWpKnn2VCJbHklFW2HtCBCoGEJMgygvAIU2YBlXAK22Kc0BP9ZjjCEkXRIvBycWAr4P-ayAFsqX8iwWItpAw3"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">오로라 홀로그램 스티커 팩</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩8,000</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A whimsical, multi-layered ribbon kit for K-pop lightsticks, featuring a mix of velvet and organza textures in soft peach and cream colors. Tiny gold heart charms hang from the ribbon tails. Professional studio lighting emphasizes the high-effort creative expression and luxurious quality of the handmade product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcolScohy18wMQtn1-4coXCmRC_FcJ5bsnLvAtdu4YRpksTelKC4Jo1P9UUnHeV-XVPqBPE4P_7kMgaeZbkOowYvQBPP6usUHQj6PWO3KtfriH4vemR3OIztBV98k_FnbpMlRWa2Zhy8GLZ4MLSGZiQ5iv5htXuEBKKbSrr13nb4ilRqE1WOBL6K6lpkhxiE_wVXRBuDHDLRF_EDBQyBAblEWiNv1NquN6nhtuECr3epx5vP-sqAbykAk4EvXtGLT-Mh5W-wSI6P8F"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">피치 벨벳 리본 키트</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩21,000</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A premium accessory featuring a lightstick handle wrap made of soft lilac lace and a delicate ribbon bow. The photography is focused and crisp, showing the intricate lace patterns. The surrounding space is filled with a soft glow, evoking an ethereal and supportive community atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXFe0_X9Y-XYwYMBvm6e-1g306vKRLYDS51rDuLXXPqRmFPXDj0ifh95Tgjb7D9gn4CPiR-thXNPKFDlx8PTl9GTCFicmI-lhEQCW0J2DbEEwvjt15XotgS0JQfDjyd944iaB_KInnzRwL_Z5ttLHc_EbOxYPhUICcWjAmNiGKES5DrviLhdOp8bAv0Ujh_sbOdJkJadjiVLpmkTMvAhBFuhrr5mgcMlf7f00edBiMLhOOET_7H3fi5GeZ7a_vs0CRrzaxR7AzB9fQ"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">레이스 핸들 랩 커버</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩15,500</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group relative flex flex-col bg-surface rounded-2xl overflow-hidden hover:translate-y-[-4px] transition-all duration-500 ambient-glow">
+<div class="aspect-[4/5] overflow-hidden relative">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary-container text-white px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider ribbon-tag pb-3">Best</span>
+</div>
+<button class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary-container hover:text-primary transition-colors scale-95 active:scale-90">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A close-up of a 'Royal Crown' accessory for a K-pop lightstick, rendered in a soft gold finish with embedded purple jewels. The image is set against a blurred background of concert lights, creating a high-end, premium lookbook feel. The lighting is soft and intentionally artistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAblEpUWkvuccaAqrgqwOGS83C4KHQ6ULR7dneKyZC0Tr3_5POYVry0eHJvHfLb_J9nRSnCCrza6Z6MouDkkxRaH7oDKOp2NRv1CdcaZet5WzfsYGr2fVF2oV4NGK1izQDTz2oX1SPYFuZ67wApnpr6IO8hPTik3KhOMuJut5WMq1U66H0bl-XsG_ufN2lSuETxU26iq4X5WW4DMbCSfs-3aLx2lBQNijnqld3quXeaEchoT_OpIOwo4-V7F47v6IzkvmTjt95qlQ5h"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md hover:bg-primary-container transition-all shadow-lg scale-90 group-hover:scale-100 duration-500">장바구니 담기</button>
+</div>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">로열 퍼플 쥬얼 크라운</h3>
+<p class="font-body-lg text-body-lg text-secondary">₩28,000</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-4">
+<button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-label-md text-label-md">1</button>
+<button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">2</button>
+<button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-on-surface-variant hover:text-primary transition-all font-label-md text-label-md">3</button>
+<button class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-low flex flex-col items-center gap-unit px-container-padding-desktop w-full">
+<div class="mb-8">
+<a class="font-display text-headline-sm text-primary" href="#">KkuLight</a>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">이용약관</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">개인정보처리방침</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">문의하기</a>
+</div>
+<p class="font-label-md text-label-md text-secondary">© 2024 KkuLight. All rights reserved.</p>
+<div class="mt-6 flex gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">public</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</footer>
+<!-- Floating Action Button (FAB) - For focus task -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-16 h-16 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+<span class="absolute right-full mr-4 bg-primary text-on-primary px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">AI 커스텀 가이드</span>
+</button>
+<script>
+        // Micro-interactions for heart icons
+        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
+            if (icon.textContent === 'favorite') {
+                icon.parentElement.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const isFilled = this.querySelector('span').getAttribute('style')?.includes('FILL');
+                    if (isFilled) {
+                        this.querySelector('span').style.fontVariationSettings = "'FILL' 0";
+                        this.querySelector('span').classList.remove('text-primary');
+                    } else {
+                        this.querySelector('span').style.fontVariationSettings = "'FILL' 1";
+                        this.querySelector('span').classList.add('text-primary');
+                    }
+                });
+            }
+        });
+
+        // Sticky Navigation opacity shift on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-surface/70', 'bg-surface/90');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-surface/90', 'bg-surface/70');
+            }
+        });
+    </script>
+</body></html>

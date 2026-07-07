@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KkuLight | 프리미엄 라벤더 리본 패키지</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#69355a",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#eeedef",
+                    "tertiary-fixed": "#ffd7ee",
+                    "surface-tint": "#6b5582",
+                    "tertiary-container": "#9c628a",
+                    "tertiary": "#814970",
+                    "on-primary-fixed-variant": "#533e69",
+                    "on-primary-container": "#fffbff",
+                    "surface-dim": "#dadadc",
+                    "surface": "#faf9fb",
+                    "primary-fixed": "#efdbff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e3e2e4",
+                    "background": "#faf9fb",
+                    "primary-fixed-dim": "#d7bcf0",
+                    "inverse-surface": "#2f3032",
+                    "primary-container": "#826b9a",
+                    "surface-variant": "#e3e2e4",
+                    "on-primary-fixed": "#25113b",
+                    "surface-bright": "#faf9fb",
+                    "on-surface-variant": "#4a454d",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#fad3fd",
+                    "inverse-primary": "#d7bcf0",
+                    "on-secondary-container": "#77587c",
+                    "on-tertiary-fixed": "#36082c",
+                    "primary": "#695380",
+                    "surface-container-high": "#e8e8ea",
+                    "outline": "#7b757e",
+                    "inverse-on-surface": "#f1f0f2",
+                    "on-background": "#1a1c1d",
+                    "surface-container-low": "#f4f3f5",
+                    "error": "#ba1a1a",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#f6b2de",
+                    "on-secondary-fixed": "#2a1131",
+                    "secondary-fixed-dim": "#dfbbe4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary": "#725477",
+                    "on-surface": "#1a1c1d",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#fcd7ff",
+                    "outline-variant": "#ccc4ce",
+                    "on-secondary-fixed-variant": "#593d5f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "64px",
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "container-padding-mobile": "20px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ribbon-accent::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23957DAD'%3E%3Cpath d='M12,2L10,4L8,2L6,4L4,2L2,4V22L4,20L6,22L8,20L10,22L12,20L14,22L16,20L18,22L20,20L22,22V4L20,2L18,4L16,2L14,4L12,2Z'/%3E%3C/svg%3E") no-repeat;
+            opacity: 0.2;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 10px 40px -10px rgba(149, 125, 173, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-primary/10 transition-all duration-300">
+<div class="flex justify-between items-center h-20 px-container-padding-desktop max-w-full mx-auto">
+<a class="font-display text-headline-md text-primary tracking-tight" href="#">KkuLight</a>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Cart</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">shopping_bag</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-all duration-300 scale-95 active:scale-90">person</button>
+</div>
+</div>
+</header>
+<main class="mt-32 mb-section-gap px-container-padding-desktop max-w-[1440px] mx-auto">
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Left: Image Gallery -->
+<div class="w-full lg:w-[60%] flex flex-col gap-unit">
+<div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-low group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional studio product shot of a premium lavender K-pop lightstick decoration kit. The scene is ethereal and bright, with soft lavender silk ribbons delicately draped around a translucent lightstick. The lighting is soft and airy, emphasizing the luxurious textures of the satin ribbons and the sparkle of tiny crystal embellishments. High-end lookbook style with ample negative space and a dreamy, k-pop aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwb7nskdh2Bbces9QMSqXDI7WCCnr5dDomcmUbJVe2k_zBX3sjCD23DoDmyaWxo2497Hu81mYtkVg7P_DgJTDe6gB98l3Vxfb5EQ65C4l-f8O5EXZ0KLi1UgNUc3V_8Cy6jGsB00SasPCp6CKB600fsl7VEC1eeO_uFIuMBQlUb1VT59xB4OQ2cuvnahXZUlLIZk8F0VjmNVf31BheB1Uj7evAb4rI_LrCdPoiGRKnGIn9kcymcVTdHax9OFwpM7U9TyHGek1gbVQU"/>
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<span class="bg-tertiary text-white px-4 py-1 rounded-full font-label-md text-label-md shadow-lg shadow-tertiary/20">NEW</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-unit">
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Close up detail of a high-quality lavender silk ribbon with a clean, heat-sealed edge. The texture of the fabric is visible under soft studio lighting, showcasing a slight pearlescent sheen that fits a premium K-pop fan aesthetic. Lavender and lilac tones dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRLkVtlgdQdHivibMqs_vhGxMxzM9Dz249WjWlQVOrL4W0h5k8NqQ2PSNst_5RBUQlO5FAVUaERmgtlquodAo5DVko3ea9GvZ1R-kOYne6oC_hmv_zzVPBq6olgOFZAGL1baRghH4r2LN59HNBw5-Q5OQ9Mce6JgT8aUzGWdQHQHCm21mlPx0KTKJA5unIb_urwNVHeafeZ4N4HxjP1WfQH7-txSaNPPVPtQ9QZ4PSe2umYLL55cNuSjB7chWjNqOfZonQ9j3TbP8G"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A miniature silver crown accessory for a K-pop lightstick, sitting on a soft white velvet surface. The crown is encrusted with tiny lavender crystals that catch the light, creating a sparkling, ethereal effect. The lighting is high-key and dreamlike." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaJ6gq2_pm7yFFg5kVMsO4aH_j0WD3wODuk_bFPTaNW2GHTZbY4iyM6v_9yn0cJA4S6GbgE9AYzry0VZkR6R0a0ofFcz1h-xbJoTgzkjnH5gahqfQvHMITUSbrEzPUIjWmwNg0RPKdXZU86AZky674t2TZoNuqefyFyPvB8yWcfHCYOrMuhn25u4_X_p7dz4rq8oVhgDnjD4u1e2uGmd7LZl68oUKCYtAPiJTLv3QAccueQZncGIm7KNfi0Z7zk5kgSdxps4Kt7FGS"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A collection of decorative K-pop themed stickers featuring stars, hearts, and Korean text in holographic lavender foil. The stickers are laid out on a clean white background, reflecting a rainbow of soft pastel colors under bright, diffuse lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOrg97v2g1Yt81uxUXCVBl67qjqw7bQAe8-Ky85CmOIhl2MkLqmI9Bkt3CZywz9UQ2HbTdTcnX9GoV1xs5zpKbKSZJ7hbBZOyei321cuCgtfYOfIs9k1ZKK_z_kw1PDFK6jK5__CHTMbT_nroOTaORjreTh9M7QBQeU4-FVtk4_bbKQ-pYMCj9I-t_DYYySdf0cOQoPodn9h70l3vLDB__4t7RTcKAHomG3PIw9S6_8_7u1Gx2mlhkDBXvX1fzt-KKH2hA-so2uSLE"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity relative">
+<img class="w-full h-full object-cover" data-alt="A lifestyle photo of a decorated K-pop lightstick being held by a hand in front of a soft-focus concert background. The lavender ribbon and crown are prominent, glowing softly under the venue's purple ambient light. The atmosphere is emotional and supportive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCXm3CL9WdINf1snz5eYOhss2e5VxCa56Sl5DmgIQx7uoJ7hK3Y-xUZZrBM6b9MyapCMDtkh8VfphtS9Tn9YQF92EmZGTrz5F-mo_BqhDkjU0p0Ln2unhKk_UAeQD-FZJloKzo4jsfDLk1ZdeMZ-V-ToZHUPrmKXOJyvfUDc9if9uJSL9Di2LpgR4ESU527LJtILwvvsZsdT4Vrx7UiUyg_dZdJTmMv4gY6xU3AY0VqAgpiQBvoa-yKgFZ_Kg94WvnjhtKnARTxfI-"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center text-white font-label-md">+4</div>
+</div>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="w-full lg:w-[40%] flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<h1 class="font-display text-display text-on-surface leading-tight">프리미엄 라벤더 리본 패키지</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">나만의 응원봉을 위한 고품격 감성 꾸미기 세트</p>
+<div class="flex items-center gap-4 mt-4">
+<span class="font-headline-lg text-headline-lg text-primary">24,000원</span>
+<span class="text-on-surface-variant line-through font-body-md">29,000원</span>
+<span class="text-error font-label-md bg-error-container px-2 py-0.5 rounded-md">17% OFF</span>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30"></div>
+<!-- Selectors -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">palette</span> 리본 컬러 선택
+                        </label>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full border-2 border-primary ring-2 ring-primary/20 bg-[#E6E6FA] transition-transform active:scale-90" title="Lavender"></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-[#F8F4FF] transition-transform active:scale-90" title="Soft Lilac"></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-[#DCD0FF] transition-transform active:scale-90" title="Deep Mauve"></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant bg-[#ffffff] transition-transform active:scale-90" title="Pure White"></button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface">미니 크라운 타입</label>
+<select class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none appearance-none">
+<option>선택해주세요</option>
+<option>실버 크리스탈 크라운</option>
+<option>골드 펄 크라운</option>
+<option>로즈골드 하트 크라운</option>
+</select>
+</div>
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface">스티커 팩 구성</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="border-2 border-primary bg-primary-fixed/30 p-3 rounded-xl flex items-center justify-between group transition-all">
+<span class="font-label-md text-on-primary-fixed">베이직 하트</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<button class="border border-outline-variant p-3 rounded-xl flex items-center justify-between group hover:border-primary/50 transition-all">
+<span class="font-label-md text-on-surface-variant">홀로그램 스타</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">circle</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-3 mt-4">
+<button class="w-full h-14 bg-primary text-on-primary rounded-full font-headline-md text-headline-md flex items-center justify-center gap-2 shadow-lg shadow-primary/20 glow-hover transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">shopping_cart</span> 장바구니 담기
+                    </button>
+<button class="w-full h-14 border-2 border-primary text-primary rounded-full font-headline-md text-headline-md hover:bg-primary-fixed/10 transition-all active:scale-[0.98]">
+                        바로 구매하기
+                    </button>
+</div>
+<div class="flex justify-around py-4 border-y border-outline-variant/30 text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span> 무료 배송
+                    </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span> 정품 보증
+                    </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">favorite</span> 선물 포장 가능
+                    </div>
+</div>
+</div>
+</div>
+<!-- Detail Section -->
+<section class="mt-section-gap max-w-4xl mx-auto">
+<div class="flex border-b border-outline-variant/30 mb-12">
+<button class="px-8 py-4 text-primary border-b-2 border-primary font-bold">상품 상세</button>
+<button class="px-8 py-4 text-on-surface-variant hover:text-primary transition-colors">리뷰 (1,240)</button>
+<button class="px-8 py-4 text-on-surface-variant hover:text-primary transition-colors">Q&amp;A</button>
+<button class="px-8 py-4 text-on-surface-variant hover:text-primary transition-colors">배송/환불</button>
+</div>
+<div class="flex flex-col gap-section-gap">
+<!-- Detailed Description -->
+<article class="flex flex-col gap-12 items-center text-center">
+<div class="flex flex-col gap-4">
+<h2 class="font-display text-display text-primary">Lovely &amp; Ethereal</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            가장 빛나는 순간을 위해, KkuLight가 제안하는 프리미엄 커스텀 키트입니다.<br/>
+                            최상급 실크 리본과 정교한 미니 크라운으로 당신의 응원봉에 영혼을 불어넣으세요.
+                        </p>
+</div>
+<div class="w-full glass-card rounded-3xl p-gutter overflow-hidden relative ribbon-accent">
+<img class="w-full rounded-2xl" data-alt="An artistic flat lay of all components in the K-pop lightstick decoration kit. A length of lavender silk ribbon, a silver crown, and holographic stickers are arranged aesthetically on a white linen background. Tiny pearls are scattered around for effect. The overall feeling is premium, handmade, and whimsical, following a light-mode color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0URD5cAOOl9bswY9HFAQlvmWw78z-SBkKgbpvC2xmV3BiYN1_QOKYralnTWA-5rAAk147wRWts54HaJT5Z6TzEVzmeGw0abb3wj_QzQA9aBB-lIGdUIlmXAKAmXCda-xmsATjxPiUE7fYcRJ5Rum3jMm3RPf0e5Juki_g7z8MQwL7CunCbSNav59Ik56DMZ-cj0Hqk3rmsJ_hiSYth_N5dI-wKr62RcOfEV4wKMS39QyWPfOE-u_g9wV6Xuv2HGlqR89tvJo5GsGF"/>
+</div>
+</article>
+<!-- How to Decorate Guide -->
+<article class="flex flex-col gap-12">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">How to Decorate</h3>
+<p class="font-body-md text-on-surface-variant">초보자도 쉽게 따라하는 '꾸미기' 가이드</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="flex flex-col gap-4 group">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Step 1 of a tutorial: A hand carefully wrapping a lavender ribbon around the handle of a white K-pop lightstick. The focus is on the clean loop being formed. Soft, ethereal lighting makes the lavender color pop against the white plastic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoSWSCvGIfsAsmDGOLNG0kw38RrSFBQ1qR13qyUl6hKi5yDCELsoDHyd-3dwCF0X7Ygap2OBDRQTMRgO5WDiCZ4VbChdauyAkrqtwWUzzu_Z6xXFFSJyqeDlIRwSpWW7VNxU9zWlBlsRJkwoixueO5HlIOywk7JhzLOgqKLVDH6M9effKW3yGRC0gPZcXaKASmwpmP0nw8h9n3YuyHMBR3TOaADkt5ds109GgzJJGAzMpr7XXhotw4pGubgZ17nUBvIv931QP5lJl_"/>
+<span class="absolute top-4 left-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
+</div>
+<h4 class="font-headline-md text-headline-md">리본 베이스 잡기</h4>
+<p class="font-body-md text-on-surface-variant">응원봉 헤드 하단에 리본을 위치시키고 단단하게 매듭을 지어주세요.</p>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Step 2 of a tutorial: Attaching a small silver crown to the top of a K-pop lightstick globe. The crown is being secured with a discreet clear adhesive dot. The lighting is bright and clean, highlighting the sparkle of the crystals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2xs3FiqZGmX_p2w1czNeWGUCewBFEuVnkytFTiuuE1ztPzOlXCqHerkJ6sDcNeYQ5gEZGE3K4lI7xi4gu2N79NYA4dF49fYdsEWaPiwJHa6N2xlSSt2DKje2QR8xfwbMQuCJeXyhVhJpzFGegB5dC08L8d3OB2sGUe1KyvBn1pYiVCxpKIX0BzXxxtk_P0mgKqKxs1-elELUfiP5uo4NJcUZwy-kxCp1oRH1Yopq3C4MEQ4sb0h5rSasRS2vuEGoEW72Lw5DZevBF"/>
+<span class="absolute top-4 left-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</span>
+</div>
+<h4 class="font-headline-md text-headline-md">크라운 포인트</h4>
+<p class="font-body-md text-on-surface-variant">글로브 상단 중앙에 미니 크라운을 부착하여 완성도를 높입니다.</p>
+</div>
+<div class="flex flex-col gap-4 group">
+<div class="aspect-square rounded-2xl overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Step 3 of a tutorial: Final touches being added to a decorated K-pop lightstick. Holographic heart stickers are being placed on the handle. The lightstick is fully decorated with the ribbon and crown, looking ready for a concert." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAykz3odn5BQni8Ngvr2xSS7JPEcL-SI2aKYex1q3A00bcyc6rhuibbHEA-zGRS18B5kakTcDXOCJxPtSEE4OqgH_qWnoqXK8a6nCXIsOV9uvxOaT_gc93ftujceR7hQBGFn4LDgaYQkDBUnDHdIWC_KMnbvzKyCmXTx_WAWsF4_9hKNljhUzXnjmYc7aQTfLxNzqBuXkO9hhItCh6O49Q_BO1aFQ5Hja_KsPMKsCbyn0tf5MuqOo4yLguZ8JCUy_rRyHmbg9jfF4o"/>
+<span class="absolute top-4 left-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</span>
+</div>
+<h4 class="font-headline-md text-headline-md">스티커 커스텀</h4>
+<p class="font-body-md text-on-surface-variant">빈 공간에 아티스트 이름이나 하트 스티커를 붙여 마무리하세요.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-low border-t border-outline-variant/20">
+<div class="flex flex-col items-center gap-unit px-container-padding-desktop w-full">
+<span class="font-display text-headline-sm text-primary">KkuLight</span>
+<div class="flex gap-8 my-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">이용약관</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">개인정보처리방침</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">문의하기</a>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant/60">© 2024 KkuLight. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for primary button
+        const buyBtn = document.querySelector('button.bg-primary');
+        buyBtn.addEventListener('mouseenter', () => {
+            buyBtn.style.transform = 'translateY(-2px)';
+        });
+        buyBtn.addEventListener('mouseleave', () => {
+            buyBtn.style.transform = 'translateY(0)';
+        });
+
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-2');
+                header.classList.remove('h-20');
+                header.classList.add('h-16');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.add('h-20');
+                header.classList.remove('h-16');
+            }
+        });
+    </script>
+</body></html>

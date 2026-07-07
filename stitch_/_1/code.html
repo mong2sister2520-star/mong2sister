@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KkuLight | 장바구니</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#69355a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eeedef",
+                        "tertiary-fixed": "#ffd7ee",
+                        "surface-tint": "#6b5582",
+                        "tertiary-container": "#9c628a",
+                        "tertiary": "#814970",
+                        "on-primary-fixed-variant": "#533e69",
+                        "on-primary-container": "#fffbff",
+                        "surface-dim": "#dadadc",
+                        "surface": "#faf9fb",
+                        "primary-fixed": "#efdbff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e4",
+                        "background": "#faf9fb",
+                        "primary-fixed-dim": "#d7bcf0",
+                        "inverse-surface": "#2f3032",
+                        "primary-container": "#826b9a",
+                        "surface-variant": "#e3e2e4",
+                        "on-primary-fixed": "#25113b",
+                        "surface-bright": "#faf9fb",
+                        "on-surface-variant": "#4a454d",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fad3fd",
+                        "inverse-primary": "#d7bcf0",
+                        "on-secondary-container": "#77587c",
+                        "on-tertiary-fixed": "#36082c",
+                        "primary": "#695380",
+                        "surface-container-high": "#e8e8ea",
+                        "outline": "#7b757e",
+                        "inverse-on-surface": "#f1f0f2",
+                        "on-background": "#1a1c1d",
+                        "surface-container-low": "#f4f3f5",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#f6b2de",
+                        "on-secondary-fixed": "#2a1131",
+                        "secondary-fixed-dim": "#dfbbe4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary": "#725477",
+                        "on-surface": "#1a1c1d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#fcd7ff",
+                        "outline-variant": "#ccc4ce",
+                        "on-secondary-fixed-variant": "#593d5f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "64px",
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "container-padding-mobile": "20px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #faf9fb;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1a1c1d;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 40px -10px rgba(149, 125, 173, 0.15);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-primary/10 transition-all duration-300">
+<div class="flex justify-between items-center h-20 px-container-padding-desktop max-w-full mx-auto">
+<a class="font-display text-headline-md text-primary tracking-tight" href="#">KkuLight</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Shop</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Cart</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="text-on-surface-variant hover:opacity-80 transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="text-on-surface-variant hover:opacity-80 transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-container-padding-mobile md:px-container-padding-desktop max-w-7xl mx-auto w-full">
+<h1 class="font-display text-display mb-12 text-on-surface">장바구니</h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Items List -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Cart Item 1 -->
+<div class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl custom-shadow inner-glow group relative overflow-hidden">
+<!-- Ribbon Decoration -->
+<div class="absolute -top-1 -right-1 w-12 h-12 overflow-hidden pointer-events-none">
+<div class="bg-tertiary text-white text-[8px] py-1 px-4 absolute top-2 right-[-20px] rotate-45 font-bold tracking-widest uppercase">Kku</div>
+</div>
+<div class="w-full md:w-32 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A soft-focus lifestyle photograph of a premium K-pop lightstick decoration kit featuring lavender satin ribbons and shimmering holographic stickers. The scene is bright and airy with an ethereal, dreamy glow, reflecting the KkuLight brand identity. High-quality textures of silk and glossy plastic are visible against a clean, white minimalist studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm8nsInwsthyOGNq9uWT4P5Texp-CAm_C9rivCprgfcwek4i9JX51Zz_Wek54bY9VRbynSlvai9Q2J8qfEFPpekic5Zerxk841GQKG4c1Xm3vN6xJg0OAbKaGjtGjcp7c7XSYj9lpIL6wz_r0PZHTTt6IWrl6lP9p_fd5vrJMLc4mc1SABG8Got3oCtNqeSEpt2ez6L8ddZs74pEbxxoHiDsNJ0Sp0pAgBZVZoOto6S5RwSINxzv24GjUIWHNVwdKWnVYDzYdCYPua"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">라벤더 가든 데코 키트</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">색상: 라벤더 드림 / 아티스트: NCT</p>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center border border-outline-variant rounded-full px-3 py-1 bg-surface">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="mx-4 font-label-md text-label-md w-4 text-center">1</span>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₩24,000</p>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-xl custom-shadow inner-glow group relative">
+<div class="w-full md:w-32 h-32 rounded-lg bg-surface-container overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Detailed macro shot of premium crystal embellishments for lightsticks, featuring heart-shaped gems and iridescent pearls arranged on a light purple surface. The lighting is soft and ethereal, capturing the delicate reflections and pastel hues of the 'Ethereal Shine' kit. Minimalist composition with plenty of white space to emphasize a luxury K-pop fan experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdENviMBZRhyp8m-jCbNl3-ZQNCazWbWEcpE8dEGlzeqGHfJcdD24gyy3Ulh4qenfYqb6LXy59CbExB8JOwb5DlEqLLXRjcbaUc0rxSWroQKltJBG9U2S1Oh1XsNCJImPxKhifaW-GaYSi83IaGcczUF_ZR2EZiCVZ2g281y04WEWyn24JB90Q0R8fGsdhgSRu3P0fiBWLhkBlCF2EFVj9Eu7zOwGSdv56LCkLuL8UalShuB-qvLw4CheKn-YZ3tY32TCg_nE80siJ"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">에테르 셔인 크리스탈 세트</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">색상: 프리즘 / 범용 디자인</p>
+</div>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center border border-outline-variant rounded-full px-3 py-1 bg-surface">
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="mx-4 font-label-md text-label-md w-4 text-center">2</span>
+<button class="p-1 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₩30,000</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Box -->
+<div class="lg:col-span-4">
+<div class="sticky top-32 bg-surface-container-lowest rounded-2xl p-8 border-2 border-primary-fixed custom-shadow">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">결제 금액</h2>
+<div class="space-y-4 mb-8 pb-8 border-b border-surface-container">
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md text-body-md">상품 금액</span>
+<span class="font-body-md text-body-md">₩54,000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="font-body-md text-body-md">배송비</span>
+<span class="font-body-md text-body-md">₩3,000</span>
+</div>
+<div class="flex justify-between text-tertiary">
+<span class="font-body-md text-body-md">할인 금액</span>
+<span class="font-body-md text-body-md">- ₩0</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-10">
+<span class="font-headline-md text-headline-md text-on-surface">총 합계</span>
+<span class="font-display text-headline-lg text-primary">₩57,000</span>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary rounded-full font-headline-md text-headline-md shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300 scale-100 active:scale-95 mb-4">
+                        주문하기
+                    </button>
+<p class="text-center font-label-sm text-label-sm text-outline">
+                        무료 배송까지 ₩13,000 남았습니다.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-section-gap w-full mt-auto">
+<div class="flex flex-col items-center gap-unit px-container-padding-desktop w-full">
+<span class="font-display text-headline-sm text-primary">KkuLight</span>
+<div class="flex gap-6 mt-4">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">이용약관</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">개인정보처리방침</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors underline-offset-4 hover:underline" href="#">문의하기</a>
+</div>
+<p class="font-label-md text-label-md text-secondary mt-4">© 2024 KkuLight. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic for quantity buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const span = this.parentElement?.querySelector('span.mx-4');
+                if (span) {
+                    let val = parseInt(span.innerText);
+                    if (this.querySelector('span')?.innerText === 'add') {
+                        span.innerText = val + 1;
+                    } else if (this.querySelector('span')?.innerText === 'remove' && val > 1) {
+                        span.innerText = val - 1;
+                    }
+                }
+            });
+        });
+
+        // Sticky Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-2');
+                header.classList.remove('h-20');
+                header.classList.add('h-16');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.remove('h-16');
+                header.classList.add('h-20');
+            }
+        });
+    </script>
+</body></html>

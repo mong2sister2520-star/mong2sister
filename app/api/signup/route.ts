@@ -9,6 +9,14 @@ type SignupRequest = {
   phone?: string;
 };
 
+const messages = {
+  missingEnv: "Turso environment variables are not configured.",
+  required: "\uBAA8\uB4E0 \uD56D\uBAA9\uC744 \uC785\uB825\uD574\uC8FC\uC138\uC694",
+  success: "\uD68C\uC6D0\uAC00\uC785\uC774 \uC644\uB8CC\uB418\uC5C8\uC2B5\uB2C8\uB2E4",
+  duplicate: "\uC774\uBBF8 \uC0AC\uC6A9 \uC911\uC778 \uC544\uC774\uB514 \uB610\uB294 \uC804\uD654\uBC88\uD638\uC785\uB2C8\uB2E4",
+  fail: "\uD68C\uC6D0\uAC00\uC785 \uC800\uC7A5 \uC911 \uC624\uB958\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4",
+};
+
 function getText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -29,10 +37,7 @@ export async function POST(request: Request) {
   const tursoToken = process.env.TURSO_KET_TOKEN;
 
   if (!tursoUrl || !tursoToken) {
-    return NextResponse.json(
-      { message: "Turso 환경변수가 설정되지 않았습니다." },
-      { status: 500 },
-    );
+    return NextResponse.json({ message: messages.missingEnv }, { status: 500 });
   }
 
   const body = (await request.json()) as SignupRequest;
@@ -42,31 +47,7 @@ export async function POST(request: Request) {
   const phone = normalizePhone(getText(body.phone));
 
   if (!name || !userId || !password || !phone) {
-    return NextResponse.json(
-      { message: "이름, 아이디, 비밀번호, 전화번호를 모두 입력하세요." },
-      { status: 400 },
-    );
-  }
-
-  if (userId.length < 4 || userId.length > 40) {
-    return NextResponse.json(
-      { message: "아이디는 4자 이상 40자 이하로 입력하세요." },
-      { status: 400 },
-    );
-  }
-
-  if (password.length < 8) {
-    return NextResponse.json(
-      { message: "비밀번호는 8자 이상 입력하세요." },
-      { status: 400 },
-    );
-  }
-
-  if (!/^\d{9,15}$/.test(phone)) {
-    return NextResponse.json(
-      { message: "전화번호는 숫자만 9자 이상 15자 이하로 입력하세요." },
-      { status: 400 },
-    );
+    return NextResponse.json({ message: messages.required }, { status: 400 });
   }
 
   const client = createClient({
@@ -85,23 +66,14 @@ export async function POST(request: Request) {
       args: [name, userId, phone, hash, salt],
     });
 
-    return NextResponse.json(
-      { message: "회원가입이 완료되었습니다." },
-      { status: 201 },
-    );
+    return NextResponse.json({ message: messages.success }, { status: 201 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "";
 
     if (message.includes("UNIQUE")) {
-      return NextResponse.json(
-        { message: "이미 사용 중인 아이디 또는 전화번호입니다." },
-        { status: 409 },
-      );
+      return NextResponse.json({ message: messages.duplicate }, { status: 409 });
     }
 
-    return NextResponse.json(
-      { message: "회원가입 저장 중 오류가 발생했습니다." },
-      { status: 500 },
-    );
+    return NextResponse.json({ message: messages.fail }, { status: 500 });
   }
 }

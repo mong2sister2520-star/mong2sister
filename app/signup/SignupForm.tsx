@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 type FormState = {
   name: string;
@@ -16,10 +17,21 @@ const initialForm: FormState = {
   phone: "",
 };
 
+const labels = {
+  name: "\uC774\uB984",
+  userId: "\uC544\uC774\uB514",
+  password: "\uBE44\uBC00\uBC88\uD638",
+  phone: "\uC804\uD654\uBC88\uD638",
+  submit: "\uD68C\uC6D0\uAC00\uC785",
+  submitting: "\uAC00\uC785 \uC911...",
+  required: "\uBAA8\uB4E0 \uD56D\uBAA9\uC744 \uC785\uB825\uD574\uC8FC\uC138\uC694",
+  success: "\uD68C\uC6D0\uAC00\uC785\uC774 \uC644\uB8CC\uB418\uC5C8\uC2B5\uB2C8\uB2E4",
+  fail: "\uD68C\uC6D0\uAC00\uC785\uC5D0 \uC2E4\uD328\uD588\uC2B5\uB2C8\uB2E4",
+};
+
 export function SignupForm() {
+  const router = useRouter();
   const [form, setForm] = useState<FormState>(initialForm);
-  const [message, setMessage] = useState("");
-  const [isError, setIsError] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function updateField(field: keyof FormState, value: string) {
@@ -28,9 +40,20 @@ export function SignupForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const payload = {
+      name: form.name.trim(),
+      userId: form.userId.trim(),
+      password: form.password.trim(),
+      phone: form.phone.trim(),
+    };
+
+    if (!payload.name || !payload.userId || !payload.password || !payload.phone) {
+      alert(labels.required);
+      return;
+    }
+
     setIsSubmitting(true);
-    setMessage("");
-    setIsError(false);
 
     try {
       const response = await fetch("/api/signup", {
@@ -38,22 +61,20 @@ export function SignupForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
 
       const result = (await response.json()) as { message?: string };
 
       if (!response.ok) {
-        throw new Error(result.message || "회원가입에 실패했습니다.");
+        throw new Error(result.message || labels.fail);
       }
 
+      alert(result.message || labels.success);
       setForm(initialForm);
-      setMessage(result.message || "회원가입이 완료되었습니다.");
+      router.push("/login");
     } catch (error) {
-      setIsError(true);
-      setMessage(
-        error instanceof Error ? error.message : "회원가입에 실패했습니다.",
-      );
+      alert(error instanceof Error ? error.message : labels.fail);
     } finally {
       setIsSubmitting(false);
     }
@@ -65,50 +86,44 @@ export function SignupForm() {
       onSubmit={handleSubmit}
     >
       <label className="flex flex-col gap-2 font-label-md text-label-md text-on-surface">
-        이름
+        {labels.name}
         <input
           className="rounded-lg border border-outline-variant bg-surface px-4 py-3 font-body-md text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
           onChange={(event) => updateField("name", event.target.value)}
-          placeholder="이름을 입력하세요"
-          required
+          placeholder={labels.name}
           type="text"
           value={form.name}
         />
       </label>
 
       <label className="flex flex-col gap-2 font-label-md text-label-md text-on-surface">
-        아이디
+        {labels.userId}
         <input
           className="rounded-lg border border-outline-variant bg-surface px-4 py-3 font-body-md text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-          minLength={4}
           onChange={(event) => updateField("userId", event.target.value)}
-          placeholder="아이디를 입력하세요"
-          required
+          placeholder={labels.userId}
           type="text"
           value={form.userId}
         />
       </label>
 
       <label className="flex flex-col gap-2 font-label-md text-label-md text-on-surface">
-        비밀번호
+        {labels.password}
         <input
           className="rounded-lg border border-outline-variant bg-surface px-4 py-3 font-body-md text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
-          minLength={8}
           onChange={(event) => updateField("password", event.target.value)}
-          placeholder="8자 이상 입력하세요"
-          required
+          placeholder={labels.password}
           type="password"
           value={form.password}
         />
       </label>
 
       <label className="flex flex-col gap-2 font-label-md text-label-md text-on-surface">
-        전화번호
+        {labels.phone}
         <input
           className="rounded-lg border border-outline-variant bg-surface px-4 py-3 font-body-md text-body-md outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
           onChange={(event) => updateField("phone", event.target.value)}
           placeholder="01012345678"
-          required
           type="tel"
           value={form.phone}
         />
@@ -119,19 +134,8 @@ export function SignupForm() {
         disabled={isSubmitting}
         type="submit"
       >
-        {isSubmitting ? "가입 중..." : "회원가입"}
+        {isSubmitting ? labels.submitting : labels.submit}
       </button>
-
-      {message ? (
-        <p
-          className={`font-body-md text-body-md ${
-            isError ? "text-error" : "text-primary"
-          }`}
-          role="status"
-        >
-          {message}
-        </p>
-      ) : null}
     </form>
   );
 }

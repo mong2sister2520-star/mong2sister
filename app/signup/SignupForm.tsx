@@ -72,7 +72,7 @@ export function SignupForm() {
 
       alert(result.message || labels.success);
       setForm(initialForm);
-      router.push("/");
+      router.push("/login");
     } catch (error) {
       alert(error instanceof Error ? error.message : labels.fail);
     } finally {
